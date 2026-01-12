@@ -91,7 +91,16 @@ button {
   margin-top: 10px;
 }
 
-button:first-of-type {
+.btn-principal {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+
   background: #16a34a;
   color: #fff;
 }
