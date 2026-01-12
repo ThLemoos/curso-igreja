@@ -1,21 +1,57 @@
+window.onload = () => {
+  document.querySelectorAll("input").forEach(i => i.value = "");
+};
+
+function getUsers() {
+  return JSON.parse(localStorage.getItem("usuarios")) || [];
+}
+
+function saveUsers(users) {
+  localStorage.setItem("usuarios", JSON.stringify(users));
+}
+
+function msg(texto, cor = "red") {
+  const p = document.getElementById("msg");
+  if (p) {
+    p.style.color = cor;
+    p.innerText = texto;
+  }
+}
+
+function toggleSenha(id) {
+  const input = document.getElementById(id);
+  input.type = input.type === "password" ? "text" : "password";
+}
+
 function cadastrar() {
   const email = document.getElementById("email").value;
   const senha = document.getElementById("senha").value;
+  const confirmar = document.getElementById("confirmar").value;
 
-  if (!email || !senha) {
+  if (!email || !senha || !confirmar) {
     msg("Preencha todos os campos");
     return;
   }
 
-  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  if (senha.length < 6) {
+    msg("Senha mínima: 6 caracteres");
+    return;
+  }
 
-  if (usuarios.find(u => u.email === email)) {
+  if (senha !== confirmar) {
+    msg("As senhas não coincidem");
+    return;
+  }
+
+  let users = getUsers();
+
+  if (users.find(u => u.email === email)) {
     msg("Email já cadastrado");
     return;
   }
 
-  usuarios.push({ email, senha });
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  users.push({ email, senha });
+  saveUsers(users);
 
   msg("Cadastro realizado! Redirecionando...", "green");
 
@@ -24,19 +60,16 @@ function cadastrar() {
   }, 1500);
 }
 
-
 function login() {
   const email = document.getElementById("email").value;
   const senha = document.getElementById("senha").value;
 
-  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  let users = getUsers();
 
-  const usuario = usuarios.find(
-    u => u.email === email && u.senha === senha
-  );
+  const user = users.find(u => u.email === email && u.senha === senha);
 
-  if (!usuario) {
-    msg("Email ou senha incorretos");
+  if (!user) {
+    msg("Email ou senha inválidos");
     return;
   }
 
@@ -44,16 +77,16 @@ function login() {
   window.location.href = "dashboard.html";
 }
 
-function msg(texto, cor = "red") {
-  const p = document.getElementById("msg");
-  p.style.color = cor;
-  p.innerText = texto;
+function recuperar() {
+  const email = document.getElementById("email").value;
+  let users = getUsers();
+
+  const user = users.find(u => u.email === email);
+
+  if (!user) {
+    msg("Email não encontrado");
+    return;
+  }
+
+  msg(`Sua senha é: ${user.senha}`, "green");
 }
-
-window.onload = () => {
-  const email = document.getElementById("email");
-  const senha = document.getElementById("senha");
-
-  if (email) email.value = "";
-  if (senha) senha.value = "";
-};

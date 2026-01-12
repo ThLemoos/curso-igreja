@@ -8,34 +8,54 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Curso da Igreja</h2>
-  <p>Crie um e-mail e senha!</p>
+<form autocomplete="off">
 
-  <input 
-  type="email" 
-  id="email" 
-  placeholder="Email"
-  autocomplete="off"
-  inputmode="email"
-/>
+  <input type="text" name="fakeuser" style="display:none">
+  <input type="password" name="fakepass" style="display:none">
 
-<input 
-  type="password" 
-  id="senha" 
-  placeholder="Senha"
-  autocomplete="new-password"
-/>
+  <div class="container">
+    <h2>Login</h2>
 
+    <div class="field">
+      <input
+        id="email"
+        type="email"
+        placeholder=" "
+        autocomplete="username"
+        inputmode="email"
+      >
+      <label>Email</label>
+    </div>
 
-  <button onclick="login()">Entrar</button>
+    <div class="field">
+      <input
+        id="senha"
+        type="password"
+        placeholder=" "
+        autocomplete="new-password"
+      >
+      <label>Senha</label>
+      <span class="toggle" onclick="toggleSenha('senha')">👁️</span>
+    </div>
 
-  <button class="secondary" onclick="window.location.href='cadastro.html'">
-    Cadastrar
-  </button>
+    <button type="button" onclick="login()">Entrar</button>
 
-  <p id="msg"></p>
-</div>
+    <button
+      type="button"
+      class="secondary"
+      onclick="location.href='cadastro.html'"
+    >
+      Cadastrar
+    </button>
+
+    <div class="link" onclick="location.href='recuperar.html'">
+      Esqueci minha senha
+    </div>
+
+    <p id="msg"></p>
+  </div>
+
+</form>
 
 <script src="js/auth.js"></script>
 </body>

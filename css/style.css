@@ -9,76 +9,101 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  text-align: center;
 }
 
 .container {
   background: #fff;
-  padding: 20px;
+  padding: 25px;
   width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-input {
+.field {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.field input {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  padding: 14px 40px 14px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 16px;
+  outline: none;
 }
 
-input::placeholder {
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
   color: #999;
+  font-size: 14px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.2s;
+  background: #fff;
+  padding: 0 5px;
 }
 
-button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border: none;
-  background: #2e7d32;
-  color: #fff;
-  border-radius: 5px;
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: -6px;
+  font-size: 12px;
+  color: #2e7d32;
+}
+
+.toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
-  transform: translate(2s);
-}
-
-button.secondary {
-  background: #555;
+  font-size: 14px;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
   border: none;
+  border-radius: 8px;
   background: #2e7d32;
   color: #fff;
-  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 button:active {
-  transform: translateY(-2px) scale(0.98);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0.97);
 }
 
+button.secondary {
+  background: #555;
+  margin-top: 10px;
+}
+
+.link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #2e7d32;
+  cursor: pointer;
+}
 
 #msg {
-  margin-top: 10px;
   text-align: center;
-  color: red;
+  margin-top: 12px;
+  font-size: 14px;
 }
