@@ -156,16 +156,40 @@ button.secondary {
 /* =========================
    BOTÃO DARK MODE
 ========================= */
+/* BOTÃO DARK MODE – PREMIUM */
 .btn-dark {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
   border: none;
-  font-size: 22px;
   cursor: pointer;
+  font-size: 20px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  color: #f8fafc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.08);
+}
+
+/* QUANDO DARK ATIVO */
+body.dark .btn-dark {
+  background: rgba(15, 23, 42, 0.8);
   color: #facc15;
 }
+
 
 /* =========================
    CONTEÚDO DO DASHBOARD
@@ -260,9 +284,37 @@ body.dark .modulo h3 {
 ========================= */
 @media (max-width: 768px) {
 
-  /* ESCONDE HERO NO CELULAR */
+  /* HERO APARECE NO CELULAR */
   .hero-curso {
-    display: none;
+    display: block;
+    padding: 20px 14px;
+  }
+
+  .hero-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .hero-card h1 {
+    font-size: 22px;
+  }
+
+  .hero-card p {
+    font-size: 14px;
+  }
+
+  .hero-info {
+    font-size: 13px;
+    gap: 12px;
+  }
+
+  /* BOTÃO DARK AJUSTADO */
+  .btn-dark {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    top: 14px;
+    right: 14px;
   }
 
   /* MÓDULOS EM COLUNA */
@@ -279,7 +331,9 @@ body.dark .modulo h3 {
     padding: 16px;
   }
 
+  /* CONTAINER LOGIN */
   .container {
     margin: 30px 15px;
   }
 }
+
