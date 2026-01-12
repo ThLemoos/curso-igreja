@@ -368,3 +368,21 @@ button:focus-visible,
 button {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* =========================
+   DARK MODE – BORDA DOS MÓDULOS
+========================= */
+
+body.dark .modulo {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .modulo:hover {
+  border-color: #ffffff;
+}
+
+body.dark .modulo:hover {
+  box-shadow: 0 0 0 1px #fff, 0 0 25px rgba(255,255,255,0.15);
+}
+
