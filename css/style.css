@@ -486,7 +486,7 @@ body.dark .btn-darkmode {
 
 /* FUNDO APENAS NA TELA DE LOGIN */
 body.login-page {
-  background: url('/img/teste-login.png') no-repeat center center;
+  background: url('../img/teste-login.png') no-repeat center center;
   background-size: cover;
   min-height: 100vh;
   display: flex;
