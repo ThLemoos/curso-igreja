@@ -398,6 +398,7 @@ body.dark .modulo:hover {
 .modulo {
   text-decoration: none;
   color: inherit;
+  text-align: center;
 }
 
 /* =========================
