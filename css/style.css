@@ -488,7 +488,6 @@ body.dark .btn-darkmode {
 body.login-page {
   background: url('/img/teste-login.png') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -505,5 +504,10 @@ body.login-page .container {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  body.login-page {
+    background-position: top center; /* melhor posicionamento no mobile */
+  }
+}
 
 
