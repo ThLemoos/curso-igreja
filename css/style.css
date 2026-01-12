@@ -337,3 +337,39 @@ body.dark .modulo h3 {
   }
 }
 
+/* BOTÃO VOLTAR AO LOGIN */
+.btn-voltar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+
+.btn-voltar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .btn-voltar {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
