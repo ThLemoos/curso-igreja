@@ -455,4 +455,33 @@ body.dark .aula-box.destaque {
   border-left-color: #22c55e;
 }
 
+/* BOTÃO DARK MODE */
+.btn-darkmode {
+  border: 2px solid #ffffff; /* borda branca */
+  background: transparent;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.btn-darkmode:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* DARK MODE (continua branco, sem ficar verde) */
+body.dark .btn-darkmode {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 
