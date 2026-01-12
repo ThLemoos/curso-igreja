@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Área do Aluno</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Curso</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<button onclick="logout()">Sair</button>
+<header class="hero-curso">
+  <div class="hero-card">
+    <h1>Formação Full Stack</h1>
 
-<h2>Bem-vindo ao curso 🙌</h2>
-<div class="conteudo">
-    <header class="hero">
-        <div class="overlay">
-            <h1>Bem-vinda ao Nosso Site</h1>
-            <p>Um lugar só nosso que pode servir como blog pessoal. Divirta-se, minha princesa estressadinha!</p>
-            <p>Vou escrever e armazenar algumas coisas nos tópicos abaixo, então, sempre que puder visite o NOSSO SITE!</p>
-            <p>Irei me declarar pra você? Irei te perturbar por aqui também? Não sei! Descubra!</p>
-        </div>
-    </header>
+    <p>
+      Este curso foi criado para te levar do absoluto zero até o
+      nível profissional, com uma metodologia prática, direta e
+      focada no mercado de trabalho.
+    </p>
 
-    <section class="boxes">
-        <a class="box" href="pagina1.html">
-            <img src="img/box1.png" alt="Imagem 1">
-            <h3>Pense bem Antes de Entrar aqui</h3>
-            <p>Aqui pode ter algo que te deixe muito feliz ou muito estressada.</p>
-            <p>A decisão é sua!!!</p>
-        </a>
+    <div class="hero-info">
+      <span>📚 6 módulos</span>
+      <span>⏱️ +40h de conteúdo</span>
+      <span>🎓 Certificado</span>
+    </div>
 
-        <a class="box" href="pagina2.html">
-            <img src="img/box2.png" alt="Imagem 2">
-            <h3>Para quando estiver cansada da rotina</h3>
-            <p>Quando estiver cansada por conta do trabalho, faculdade e cursos, pare aqui um pouco.</p>
-        </a>
- 
-        <a class="box" href="pagina3.html">
-            <img src="img/presente.png" alt="Imagem 3">
-            <h3>Um presente surpresa para você ❤️ </h3>
-            <p>Este conteúdo tem senha (achou que ia ser fácil?)</p>
-            <p>Pense bastante na dica de senha!</p>
-        </a>
-</div>
+    <button class="btn-dark" onclick="toggleDark()">🌙</button>
+  </div>
+</header>
+
+
+
+<!-- CONTEÚDO -->
+<main class="conteudo">
+
+  <section class="modulos">
+
+    <div class="modulo" onclick="alert('Módulo 1')">
+      <img src="img/teste.png" alt="Módulo 1">
+      <h3>Módulo 1 – Fundamentos</h3>
+    </div>
+
+    <div class="modulo" onclick="alert('Módulo 2')">
+      <img src="img/teste.png" alt="Módulo 2">
+      <h3>Módulo 2 – HTML & CSS</h3>
+    </div>
+
+    <div class="modulo" onclick="alert('Módulo 3')">
+      <img src="img/teste.png" alt="Módulo 3">
+      <h3>Módulo 3 – JavaScript</h3>
+    </div>
+
+    <div class="modulo" onclick="alert('Módulo 4')">
+      <img src="img/teste.png" alt="Módulo 4">
+      <h3>Módulo 4 – Front-end</h3>
+    </div>
+
+    <div class="modulo" onclick="alert('Módulo 5')">
+      <img src="img/teste.png" alt="Módulo 5">
+      <h3>Módulo 5 – Back-end</h3>
+    </div>
+
+    <div class="modulo" onclick="alert('Módulo 6')">
+      <img src="img/teste.png" alt="Módulo 6">
+      <h3>Módulo 6 – Projeto Final</h3>
+    </div>
+
+      <div class="modulo" onclick="alert('Módulo 7')">
+    <img src="img/teste.png" alt="Módulo 7">
+    <h3>Módulo 7 – Encerramento</h3>
+  </div>
+
+  <div class="modulo" onclick="alert('Módulo 8')">
+    <img src="img/teste.png" alt="Módulo 8">
+    <h3>Módulo 8 – Encerramento</h3>
+  </div>
+
+  <div class="modulo" onclick="alert('Módulo 9')">
+    <img src="img/teste.png" alt="Módulo 9">
+    <h3>Módulo 9 – Encerramento</h3>
+  </div>
+
+  <div class="modulo" onclick="alert('Módulo 10')">
+    <img src="img/teste.png" alt="Módulo 10">
+    <h3>Módulo 10 – Encerramento</h3>
+  </div>
+
+  <div class="modulo" onclick="alert('Módulo 11')">
+    <img src="img/teste.png" alt="Módulo 11">
+    <h3>Módulo 11 – Encerramento</h3>
+  </div>
+
+  <div class="modulo" onclick="alert('Módulo 12')">
+    <img src="img/teste.png" alt="Módulo 12">
+    <h3>Módulo 12 – Encerramento</h3>
+  </div>
+
+  </section>
+
+</main>
 
 <script>
-  if (!localStorage.getItem("logado")) {
-    location.href = "index.html";
-  }
-
-  function logout() {
-    localStorage.removeItem("logado");
-    location.href = "index.html";
+  function toggleDark() {
+    document.body.classList.toggle('dark');
   }
 </script>
-
-<h2>Bem-vindo ao curso 🙌</h2>
-<button onclick="logout()">Sair</button>
-
 
 </body>
 </html>
