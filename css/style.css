@@ -1,52 +1,55 @@
-/* =========================
-   RESET GLOBAL
-========================= */
+/* RESET BÁSICO */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
   background: #f1f5f9;
-  color: #0f172a;
+  color: #111827;
+  min-height: 100vh;
 }
 
 /* =========================
-   CONTAINER (LOGIN / CADASTRO)
+   LOGIN / CADASTRO / RECUPERAR
 ========================= */
+
 .container {
-  width: 100%;
   max-width: 380px;
   margin: 60px auto;
-  padding: 30px;
+  padding: 32px 24px;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
 }
 
 .container h2 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
+  font-size: 24px;
 }
 
-/* =========================
-   INPUTS COM LABEL FLUTUANTE
-========================= */
 .field {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .field input {
   width: 100%;
-  padding: 14px;
-  font-size: 15px;
+  padding: 14px 44px 14px 14px;
   border-radius: 10px;
   border: 1px solid #cbd5f5;
-  background: #f8fafc;
+  font-size: 15px;
   outline: none;
+  background: #eef2ff;
+}
+
+/* remove autofill estranho */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #eef2ff inset !important;
+  -webkit-text-fill-color: #111827 !important;
 }
 
 .field label {
@@ -54,322 +57,209 @@ body {
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  background: #ffffff;
-  padding: 0 6px;
-  font-size: 14px;
-  color: #64748b;
+  color: #6b7280;
   pointer-events: none;
-  transition: 0.3s;
+  transition: 0.2s;
+  background: transparent;
 }
 
 .field input:focus + label,
 .field input:not(:placeholder-shown) + label {
   top: -8px;
   font-size: 12px;
-  color: #2563eb;
+  background: #ffffff;
+  padding: 0 6px;
 }
 
-/* OLHO DA SENHA */
 .toggle {
   position: absolute;
-  right: 12px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
 }
 
-/* =========================
-   BOTÕES
-========================= */
+/* BOTÕES LOGIN */
 button {
   width: 100%;
   padding: 14px;
-  border-radius: 12px;
   border: none;
-  background: #16a34a;
-  color: #ffffff;
+  border-radius: 12px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+button:first-of-type {
+  background: #16a34a;
+  color: #fff;
 }
 
 button.secondary {
-  background: #475569;
+  background: #4b5563;
+  color: #fff;
 }
 
-/* LINKS */
 .link {
   text-align: center;
-  margin-top: 15px;
-  color: #2563eb;
+  margin-top: 14px;
+  color: #16a34a;
   cursor: pointer;
-  font-size: 14px;
 }
 
 /* =========================
-   HERO DO CURSO (PC)
+   BOTÃO VOLTAR LOGIN
 ========================= */
+
+.btn-voltar-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px auto;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .btn-voltar-login {
+    width: calc(100% - 32px);
+    justify-content: center;
+    padding: 16px;
+  }
+}
+
+/* =========================
+   HERO / DASHBOARD
+========================= */
+
 .hero-curso {
-  position: relative;
-  background: linear-gradient(135deg, #020617, #0f172a);
-  padding: 30px 20px;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #020617, #020617cc);
 }
 
 .hero-card {
   max-width: 1100px;
   margin: auto;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  border-radius: 22px;
-  padding: 30px;
+  background: #020617dd;
   color: #f8fafc;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  position: relative;
+  padding: 32px;
+  border-radius: 20px;
 }
 
 .hero-card h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 12px;
 }
 
 .hero-card p {
-  font-size: 15px;
+  max-width: 700px;
   line-height: 1.6;
-  max-width: 750px;
+  color: #cbd5f5;
 }
 
-/* INFO DO CURSO */
 .hero-info {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   margin-top: 18px;
-  font-size: 14px;
   flex-wrap: wrap;
 }
 
-/* =========================
-   BOTÃO DARK MODE
-========================= */
-/* BOTÃO DARK MODE – PREMIUM */
-.btn-dark {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
+/* MOBILE HERO */
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 24px;
+  }
 
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(6px);
-  color: #f8fafc;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: all 0.3s ease;
+  .hero-card h1 {
+    font-size: 24px;
+  }
 }
-
-.btn-dark:hover {
-  background: rgba(255, 255, 255, 0.22);
-  transform: scale(1.08);
-}
-
-/* QUANDO DARK ATIVO */
-body.dark .btn-dark {
-  background: rgba(15, 23, 42, 0.8);
-  color: #facc15;
-}
-
 
 /* =========================
-   CONTEÚDO DO DASHBOARD
+   MÓDULOS
 ========================= */
+
 .conteudo {
-  padding: 30px 20px;
+  padding: 40px 20px;
+}
+
+.modulos {
   max-width: 1200px;
   margin: auto;
-}
-
-/* GRID DE MÓDULOS */
-.modulos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 
-/* CARD DO MÓDULO */
 .modulo {
   background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .modulo:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
 }
 
-/* IMAGEM DO MÓDULO */
 .modulo img {
   width: 100%;
-  height: 150px;
+  height: 160px;
   object-fit: cover;
-  display: block;
 }
 
-/* TÍTULO DO MÓDULO */
 .modulo h3 {
-  padding: 14px;
+  padding: 16px;
   font-size: 16px;
-  text-align: center;
-  background: #f8fafc;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .modulo img {
+    height: 200px;
+  }
+
+  .modulo h3 {
+    font-size: 17px;
+  }
 }
 
 /* =========================
    DARK MODE
 ========================= */
-body.dark {
+
+.dark body {
   background: #020617;
   color: #e5e7eb;
 }
 
-body.dark .container {
-  background: #0f172a;
-  color: #f8fafc;
-}
-
-body.dark .field input {
+.dark .container {
   background: #020617;
-  border-color: #1e293b;
-  color: #f8fafc;
 }
 
-body.dark .field label {
-  background: #0f172a;
-  color: #94a3b8;
-}
-
-body.dark .hero-curso {
-  background: linear-gradient(135deg, #020617, #020617);
-}
-
-body.dark .hero-card {
-  background: rgba(15,23,42,0.9);
-}
-
-body.dark .modulo {
-  background: #0f172a;
-}
-
-body.dark .modulo h3 {
+.dark .field input {
   background: #020617;
-  color: #f8fafc;
+  color: #e5e7eb;
+  border-color: #334155;
 }
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  /* HERO APARECE NO CELULAR */
-  .hero-curso {
-    display: block;
-    padding: 20px 14px;
-  }
-
-  .hero-card {
-    padding: 20px;
-    border-radius: 16px;
-  }
-
-  .hero-card h1 {
-    font-size: 22px;
-  }
-
-  .hero-card p {
-    font-size: 14px;
-  }
-
-  .hero-info {
-    font-size: 13px;
-    gap: 12px;
-  }
-
-  /* BOTÃO DARK AJUSTADO */
-  .btn-dark {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-    top: 14px;
-    right: 14px;
-  }
-
-  /* MÓDULOS EM COLUNA */
-  .modulos {
-    grid-template-columns: 1fr;
-  }
-
-  .modulo img {
-    height: 190px;
-  }
-
-  .modulo h3 {
-    font-size: 18px;
-    padding: 16px;
-  }
-
-  /* CONTAINER LOGIN */
-  .container {
-    margin: 30px 15px;
-  }
+.dark .hero-card {
+  background: #020617;
 }
 
-/* BOTÃO VOLTAR AO LOGIN */
-.btn-voltar {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  color: #fff;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 999;
+.dark .modulo {
+  background: #020617;
 }
 
-.btn-voltar:hover {
-  transform: scale(1.08);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+.dark .btn-voltar-login {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #052e16;
 }
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .btn-voltar {
-    width: 46px;
-    height: 46px;
-    font-size: 20px;
-    bottom: 16px;
-    right: 16px;
-  }
-}
-

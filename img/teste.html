@@ -349,3 +349,393 @@ body.dark .hero-card {
   background: rgba(15,23,42,0.9);
 }
 
+=========================================================================================================
+
+/* =========================
+   RESET GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* =========================
+   CONTAINER (LOGIN / CADASTRO)
+========================= */
+.container {
+  width: 100%;
+  max-width: 380px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   INPUTS COM LABEL FLUTUANTE
+========================= */
+.field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.field input {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  background: #f8fafc;
+  outline: none;
+}
+
+.field label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  padding: 0 6px;
+  font-size: 14px;
+  color: #64748b;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 12px;
+  color: #2563eb;
+}
+
+/* OLHO DA SENHA */
+.toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button.secondary {
+  background: #475569;
+}
+
+/* LINKS */
+.link {
+  text-align: center;
+  margin-top: 15px;
+  color: #2563eb;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* =========================
+   HERO DO CURSO (PC)
+========================= */
+.hero-curso {
+  position: relative;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  padding: 30px 20px;
+}
+
+.hero-card {
+  max-width: 1100px;
+  margin: auto;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 22px;
+  padding: 30px;
+  color: #f8fafc;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.hero-card h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 750px;
+}
+
+/* INFO DO CURSO */
+.hero-info {
+  display: flex;
+  gap: 20px;
+  margin-top: 18px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   BOTÃO DARK MODE
+========================= */
+/* BOTÃO DARK MODE – PREMIUM */
+.btn-dark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  color: #f8fafc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.08);
+}
+
+/* QUANDO DARK ATIVO */
+body.dark .btn-dark {
+  background: rgba(15, 23, 42, 0.8);
+  color: #facc15;
+}
+
+
+/* =========================
+   CONTEÚDO DO DASHBOARD
+========================= */
+.conteudo {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* GRID DE MÓDULOS */
+.modulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+/* CARD DO MÓDULO */
+.modulo {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.modulo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+}
+
+/* IMAGEM DO MÓDULO */
+.modulo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TÍTULO DO MÓDULO */
+.modulo h3 {
+  padding: 14px;
+  font-size: 16px;
+  text-align: center;
+  background: #f8fafc;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .container {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark .field input {
+  background: #020617;
+  border-color: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark .field label {
+  background: #0f172a;
+  color: #94a3b8;
+}
+
+body.dark .hero-curso {
+  background: linear-gradient(135deg, #020617, #020617);
+}
+
+body.dark .hero-card {
+  background: rgba(15,23,42,0.9);
+}
+
+body.dark .modulo {
+  background: #0f172a;
+}
+
+body.dark .modulo h3 {
+  background: #020617;
+  color: #f8fafc;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  /* HERO APARECE NO CELULAR */
+  .hero-curso {
+    display: block;
+    padding: 20px 14px;
+  }
+
+  .hero-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .hero-card h1 {
+    font-size: 22px;
+  }
+
+  .hero-card p {
+    font-size: 14px;
+  }
+
+  .hero-info {
+    font-size: 13px;
+    gap: 12px;
+  }
+
+  /* BOTÃO DARK AJUSTADO */
+  .btn-dark {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    top: 14px;
+    right: 14px;
+  }
+
+  /* MÓDULOS EM COLUNA */
+  .modulos {
+    grid-template-columns: 1fr;
+  }
+
+  .modulo img {
+    height: 190px;
+  }
+
+  .modulo h3 {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  /* CONTAINER LOGIN */
+  .container {
+    margin: 30px 15px;
+  }
+}
+
+.btn-voltar-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 16px auto;
+  padding: 12px 18px;
+
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  text-decoration: none;
+
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+
+  width: fit-content;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* HOVER PC */
+.btn-voltar-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.3);
+}
+
+/* TOQUE MOBILE */
+.btn-voltar-login:active {
+  transform: scale(0.96);
+}
+
+/* CENTRALIZA NO MOBILE */
+@media (max-width: 768px) {
+  .btn-voltar-login {
+    width: calc(100% - 32px);
+    justify-content: center;
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
+/* DARK MODE */
+.dark .btn-voltar-login {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #052e16;
+}
+
