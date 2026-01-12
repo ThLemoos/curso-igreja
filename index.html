@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Curso</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="container">
+  <h2>Curso da Igreja</h2>
+  <p>Crie um e-mail e senha!</p>
+
+  <input 
+  type="email" 
+  id="email" 
+  placeholder="Email"
+  autocomplete="off"
+  inputmode="email"
+/>
+
+<input 
+  type="password" 
+  id="senha" 
+  placeholder="Senha"
+  autocomplete="new-password"
+/>
+
+
+  <button onclick="login()">Entrar</button>
+
+  <button class="secondary" onclick="window.location.href='cadastro.html'">
+    Cadastrar
+  </button>
+
+  <p id="msg"></p>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
