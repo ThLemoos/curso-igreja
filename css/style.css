@@ -263,3 +263,39 @@ button.secondary {
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #052e16;
 }
+
+/* =========================
+   EFEITOS GERAIS DE BOTÕES
+========================= */
+
+button,
+.btn-voltar-login {
+  transition: all 0.2s ease;
+}
+
+/* HOVER (PC) */
+button:hover,
+.btn-voltar-login:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* CLIQUE (PC + MOBILE) */
+button:active,
+.btn-voltar-login:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25) inset;
+}
+
+/* FOCO (TECLADO / ACESSIBILIDADE) */
+button:focus-visible,
+.btn-voltar-login:focus-visible {
+  outline: 3px solid #22c55e;
+  outline-offset: 3px;
+}
+
+/* REMOVE BORDA FEIA MOBILE */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
