@@ -110,5 +110,27 @@
   }
 </script>
 
+<script>
+  const btnDarkMode = document.getElementById('btnDarkMode');
+
+  // 1. Ao carregar a página, verificar localStorage
+  if(localStorage.getItem('darkMode') === 'true'){
+    document.body.classList.add('dark');
+  }
+
+  // 2. Ao clicar no botão, alternar dark mode
+  btnDarkMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+
+    // Salvar no localStorage
+    if(document.body.classList.contains('dark')){
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      localStorage.setItem('darkMode', 'false');
+    }
+  });
+</script>
+
+
 </body>
 </html>
