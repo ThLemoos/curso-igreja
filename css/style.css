@@ -395,3 +395,63 @@ body.dark .modulo:hover {
   box-shadow: 0 0 0 1px #fff, 0 0 25px rgba(255,255,255,0.15);
 }
 
+.modulo {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   PÁGINA DE CONTEÚDO DO MÓDULO
+========================= */
+
+.aula-box {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.aula-box h2 {
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.aula-box p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+.aula-box ul {
+  padding-left: 20px;
+}
+
+.aula-box li {
+  margin-bottom: 10px;
+}
+
+/* BLOCO DESTACADO */
+.aula-box.destaque {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  border-left: 6px solid #4f46e5;
+}
+
+/* DARK MODE */
+body.dark .aula-box {
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+body.dark .aula-box p {
+  color: #cbd5f5;
+}
+
+body.dark .aula-box.destaque {
+  background: #020617;
+  border-left-color: #22c55e;
+}
+
+
