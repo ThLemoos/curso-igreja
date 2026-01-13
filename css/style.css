@@ -22,7 +22,7 @@ body {
   padding: 32px 24px;
   background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
 .container h2 {
@@ -63,8 +63,8 @@ input:-webkit-autofill {
   background: transparent;
 }
 
-.field input:focus + label,
-.field input:not(:placeholder-shown) + label {
+.field input:focus+label,
+.field input:not(:placeholder-shown)+label {
   top: -8px;
   font-size: 12px;
   background: #ffffff;
@@ -147,7 +147,7 @@ button.secondary {
   background: #4f46e5;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(79,70,229,0.4);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
 }
 
 /* CLICK PC + MOBILE */
@@ -194,7 +194,7 @@ button.secondary {
   font-size: 18px;
   cursor: pointer;
 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.25s ease;
 
   z-index: 999;
@@ -277,7 +277,7 @@ body.dark .btn-darkmode {
 .modulo {
   background: #ffffff;
   border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -356,14 +356,14 @@ button:hover,
 .btn-voltar-login:hover {
   filter: brightness(1.08);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* CLIQUE (PC + MOBILE) */
 button:active,
 .btn-voltar-login:active {
   transform: scale(0.97);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25) inset;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) inset;
 }
 
 /* FOCO (TECLADO / ACESSIBILIDADE) */
@@ -392,7 +392,7 @@ body.dark .modulo:hover {
 }
 
 body.dark .modulo:hover {
-  box-shadow: 0 0 0 1px #fff, 0 0 25px rgba(255,255,255,0.15);
+  box-shadow: 0 0 0 1px #fff, 0 0 25px rgba(255, 255, 255, 0.15);
 }
 
 .modulo {
@@ -411,7 +411,7 @@ body.dark .modulo:hover {
   background: #ffffff;
   padding: 28px;
   border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .aula-box h2 {
@@ -443,7 +443,7 @@ body.dark .modulo:hover {
 body.dark .aula-box {
   background: #020617;
   color: #e5e7eb;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 body.dark .aula-box p {
@@ -457,7 +457,8 @@ body.dark .aula-box.destaque {
 
 /* BOTÃO DARK MODE */
 .btn-darkmode {
-  border: 2px solid #ffffff; /* borda branca */
+  border: 2px solid #ffffff;
+  /* borda branca */
   background: transparent;
   color: #ffffff;
   width: 44px;
@@ -496,18 +497,18 @@ body.login-page {
 
 /* Container do formulário */
 body.login-page .container {
-  background: rgba(255, 255, 255, 0.9); /* sem afetar outras páginas */
+  background: rgba(255, 255, 255, 0.9);
+  /* sem afetar outras páginas */
   max-width: 380px;
   padding: 32px 24px;
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
   margin: 0;
 }
 
 @media (max-width: 768px) {
   body.login-page {
-    background-position: top center; /* melhor posicionamento no mobile */
+    background-position: top center;
+    /* melhor posicionamento no mobile */
   }
 }
-
-

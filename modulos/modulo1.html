@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Módulo 1</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-<button class="btn-darkmode" id="btnDarkMode">🌙</button>
-<header class="hero-curso">
-  <div class="hero-card">
-    <h1>Módulo 1 – Título do Módulo 1</h1>
+  <button class="btn-darkmode" id="btnDarkMode">🌙</button>
+  <header class="hero-curso">
+    <div class="hero-card">
+      <h1>Módulo 1 – Título do Módulo 1</h1>
 
-    <p>
-      Neste módulo você vai construir a base mais importante da sua
-      jornada neste curso: entender bases fundamentais etc...
-    </p>
+      <p>
+        Neste módulo você vai construir a base mais importante da sua
+        jornada neste curso: entender bases fundamentais etc...
+      </p>
 
-    <div class="hero-info">
-      <span>📘 Introdução</span>
-      <span>⏱️ 3h de conteúdo</span>
-      <span>🎯 Base essencial</span>
+      <div class="hero-info">
+        <span>📘 Introdução</span>
+        <span>⏱️ 3h de conteúdo</span>
+        <span>🎯 Base essencial</span>
+      </div>
+
+      <a href="../dashboard.html" class="btn-voltar-login">
+        ⬅ Voltar
+      </a>
     </div>
+  </header>
+  <main class="conteudo">
+    <section class="aula-box">
 
-    <a href="../dashboard.html" class="btn-voltar-login">
-      ⬅ Voltar
-    </a>
-  </div>
-</header>
-<main class="conteudo">
-  <section class="aula-box">
+      <h2>📌 O que você vai aprender</h2>
 
-    <h2>📌 O que você vai aprender</h2>
+      <ul>
+        <li>Assunto 1</li>
+        <li>Assunto 2</li>
+        <li>Assunto 3</li>
+        <li>Assunto 4</li>
+      </ul>
 
-    <ul>
-      <li>Assunto 1</li>
-      <li>Assunto 2</li>
-      <li>Assunto 3</li>
-      <li>Assunto 4</li>
-    </ul>
+    </section>
 
-  </section>
+    <section class="aula-box">
+      <h2>Título do Assunto 1</h2>
 
-  <section class="aula-box">
-    <h2>Título do Assunto 1</h2>
+      <p>
+        Texto de conteúdo para o assunto 1.
+      </p>
 
-    <p>
-      Texto de conteúdo para o assunto 1.
-    </p>
+    </section>
 
-  </section>
+    <section class="aula-box destaque">
+      <h2>⚠️ Aqui podemos colocar uma observação importante</h2>
 
-  <section class="aula-box destaque">
-    <h2>⚠️ Aqui podemos colocar uma observação importante</h2>
+      <p>
+        Essa seção fica como destaque e o que vc quiser colocar de importante especifique pra
+        mim que eu uso esse modelo.
+      </p>
+    </section>
 
-    <p>
-      Essa seção fica como destaque e o que vc quiser colocar de importante especifique pra 
-      mim que eu uso esse modelo.
-    </p>
-  </section>
+    <section class="aula-box">
+      <h2>✅ Título pra Finalização da Aula</h2>
 
-  <section class="aula-box">
-    <h2>✅ Título pra Finalização da Aula</h2>
+      <p>
+        No próximo módulo você vai aprender a...
+      </p>
+    </section>
 
-    <p>
-      No próximo módulo você vai aprender a...
-    </p>
-  </section>
+    <script>
+      const btnDarkMode = document.getElementById('btnDarkMode');
 
-  <script>
-  const btnDarkMode = document.getElementById('btnDarkMode');
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+      }
 
-  if(localStorage.getItem('darkMode') === 'true'){
-    document.body.classList.add('dark');
-  }
+      btnDarkMode.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
 
-  btnDarkMode.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    
-    if(document.body.classList.contains('dark')){
-      localStorage.setItem('darkMode', 'true');
-    } else {
-      localStorage.setItem('darkMode', 'false');
-    }
-  });
-</script>
-<script src="js/darkmode.js"></script>
+        if (document.body.classList.contains('dark')) {
+          localStorage.setItem('darkMode', 'true');
+        } else {
+          localStorage.setItem('darkMode', 'false');
+        }
+      });
+    </script>
+    <script src="js/darkmode.js"></script>
 
 
-</main>
+  </main>
 
 </body>
+
 </html>
