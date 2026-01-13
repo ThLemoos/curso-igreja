@@ -4,13 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Módulo 12</title>
-
-  <!-- CSS GLOBAL -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <button class="btn-darkmode" id="btnDarkMode">🌙</button>
-<!-- TOPO DO MÓDULO -->
 <header class="hero-curso">
   <div class="hero-card">
     <h1>Módulo 12 – Título do Módulo 12</h1>
@@ -31,11 +28,7 @@
     </a>
   </div>
 </header>
-
-<!-- CONTEÚDO DO MÓDULO -->
 <main class="conteudo">
-
-  <!-- BLOCO DE CONTEÚDO -->
   <section class="aula-box">
 
     <h2>📌 O que você vai aprender</h2>
@@ -77,19 +70,15 @@
 
 </main>
   <script>
-  // Pegando o botão
   const btnDarkMode = document.getElementById('btnDarkMode');
 
-  // Verificar se já existe preferência salva
   if(localStorage.getItem('darkMode') === 'true'){
     document.body.classList.add('dark');
   }
 
-  // Toggle dark mode
   btnDarkMode.addEventListener('click', () => {
     document.body.classList.toggle('dark');
 
-    // Salvar preferência no localStorage
     if(document.body.classList.contains('dark')){
       localStorage.setItem('darkMode', 'true');
     } else {
