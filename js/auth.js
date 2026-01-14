@@ -74,7 +74,7 @@ function login() {
   }
 
   localStorage.setItem("logado", email);
-  window.location.href = "dashboard.html";
+  window.location.href = "selecaoCurso/selecao.html";
 }
 
 function recuperar() {

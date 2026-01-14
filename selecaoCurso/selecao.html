@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seleção de Cursos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="hero-curso">
+        <div class="hero-card">
+            <h1 style>Escolha sua Jornada de Estudos</h1>
+
+            <p>
+                Selecione o curso ideal para o seu objetivo e comece agora sua
+                preparação para o pré-vestibular ou carreira militar.
+            </p>
+
+            <a href="../index.html" class="btn-voltar-login">
+                ⬅ Sair
+            </a>
+
+            <button class="btn-darkmode" id="btnDarkMode">🌙</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="modulos">
+
+            <a href="../dashboard.html" class="modulo">
+                <img src="../img/prevest.png" alt="Módulo 1">
+                <h3>Área do curso para os alunos do prevest</h3>
+            </a>
+
+            <a href="../dashboard2.html" class="modulo">
+                <img src="../img/premilitar.png" alt="Módulo 2">
+                <h3>Área do curso para os alunos do pré-militar</h3>
+            </a>
+
+        </section>
+    </main>
+
+    <script>
+        function toggleDark() {
+            document.body.classList.toggle('dark');
+        }
+    </script>
+
+    <script>
+        const btnDarkMode = document.getElementById('btnDarkMode');
+
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark');
+        }
+
+        btnDarkMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+
+            if (document.body.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                localStorage.setItem('darkMode', 'false');
+            }
+        });
+    </script>
+    <script src="js/darkmode.js"></script>
+
+</body>
+
+</html>

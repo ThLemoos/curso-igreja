@@ -512,3 +512,123 @@ body.login-page .container {
     /* melhor posicionamento no mobile */
   }
 }
+
+/* Overlay escuro */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+/* Caixa de login */
+.box-login {
+  background: #1f2933;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.box-login h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.box-login p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.box-login input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: #374151;
+  color: #fff;
+}
+
+.box-login input::placeholder {
+  color: #9ca3af;
+}
+
+/* Botão */
+.box-login button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.box-login button:hover {
+  background: #dc2626;
+}
+
+/* Erro */
+.erro {
+  color: #f87171;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* REMOVE AUTOFILL E BOLINHAS FANTASMA */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #e5e7eb;
+  -webkit-box-shadow: 0 0 0 1000px #020617 inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.campo-senha {
+  position: relative;
+  width: 100%;
+}
+
+.campo-senha input {
+  width: 100%;
+  padding: 14px 48px 14px 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  z-index: 1;
+}
+
+.toggle-senha {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+}
+
