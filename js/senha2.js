@@ -15,6 +15,7 @@ function verificarSenha() {
     }
 }
 
+
 function liberarAcesso() {
     const tela = document.getElementById("telaSenha");
 
@@ -33,3 +34,14 @@ window.onload = () => {
         liberarAcesso();
     }
 };
+
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        sessionStorage.removeItem(CHAVE_CURSO);
+        location.reload();
+    }
+});
+
+window.addEventListener("beforeunload", () => {
+    sessionStorage.removeItem(CHAVE_CURSO);
+});
