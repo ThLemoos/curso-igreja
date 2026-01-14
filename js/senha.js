@@ -1,11 +1,12 @@
-const senhaCorreta = "prevest2026";
+const SENHA_CURSO = "prevest2026";
+const CHAVE_CURSO = "preVestLiberado";
 
 function verificarSenha() {
     const senhaInput = document.getElementById("senhaDigitada");
     const erro = document.getElementById("erro");
 
-    if (senhaInput.value === senhaCorreta) {
-        sessionStorage.setItem("preVestLiberado", "true");
+    if (senhaInput.value === SENHA_CURSO) {
+        sessionStorage.setItem(CHAVE_CURSO, "true");
         liberarAcesso();
     } else {
         erro.innerText = "Senha incorreta!";
@@ -24,13 +25,11 @@ function liberarAcesso() {
     }, 300);
 }
 
-window.onload = function () {
+window.onload = () => {
     const senhaInput = document.getElementById("senhaDigitada");
-
     senhaInput.value = "";
-    senhaInput.setAttribute("readonly", true);
 
-    if (sessionStorage.getItem("preVestLiberado") === "true") {
+    if (sessionStorage.getItem(CHAVE_CURSO) === "true") {
         liberarAcesso();
     }
 };
