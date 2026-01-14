@@ -1,5 +1,9 @@
 const SENHA_CURSO = "prevest2026";
-const CHAVE_CURSO = "preVestLiberado";
+const CHAVE_CURSO = "acesso_prevest";
+
+document.addEventListener("DOMContentLoaded", () => {
+    sessionStorage.removeItem(CHAVE_CURSO);
+});
 
 function verificarSenha() {
     const senhaInput = document.getElementById("senhaDigitada");
@@ -10,37 +14,14 @@ function verificarSenha() {
         liberarAcesso();
     } else {
         erro.innerText = "Senha incorreta!";
-        erro.style.opacity = "1";
         senhaInput.value = "";
     }
 }
 
 function liberarAcesso() {
-    const tela = document.getElementById("telaSenha");
-
-    tela.style.opacity = "0";
-
-    setTimeout(() => {
-        tela.style.display = "none";
-    }, 300);
+    document.getElementById("telaSenha").style.display = "none";
 }
 
-window.onload = () => {
-    const senhaInput = document.getElementById("senhaDigitada");
-    senhaInput.value = "";
-
-    if (sessionStorage.getItem(CHAVE_CURSO) === "true") {
-        liberarAcesso();
-    }
-};
-
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        sessionStorage.removeItem(CHAVE_CURSO);
-        location.reload();
-    }
-});
-
-window.addEventListener("beforeunload", () => {
+window.addEventListener("pageshow", () => {
     sessionStorage.removeItem(CHAVE_CURSO);
 });
